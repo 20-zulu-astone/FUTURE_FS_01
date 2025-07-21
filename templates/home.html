@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+</head>
+<body>
+    <h1>Welcome to My Portfolio</h1>
+
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill.name }} - {{ skill.proficiency }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Projects</h2>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <strong>{{ project.title }}</strong><br>
+                {{ project.description }}<br>
+                {% if project.link %}
+                    <a href="{{ project.link }}">View Project</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Achievements</h2>
+    <ul>
+        {% for achievement in achievements %}
+            <li>
+                <strong>{{ achievement.title }}</strong> ({{ achievement.date }})<br>
+                {{ achievement.description }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
