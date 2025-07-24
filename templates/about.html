@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="container text-white py-5">
+    <div class="row align-items-center">
+        <div class="col-md-4 text-center">
+            <img src="{% static 'images/Astone Profile.jpg' %}" alt="Profile Picture" class="img-fluid rounded-circle" width="200">
+        </div>
+        <div class="col-md-8">
+            <h2>About Me</h2>
+            <p>Hello! I'm Astone Zulu, a passionate developer and designer.</p>
+            <p>I create digital solutions using Python, C, SQL, Canva, and Photoshop.</p>
+            <p>I am writer, Truth to Power and Gazing at the stars are one of my books</p>
+
+            <!-- Download CV button -->
+            <a href="{% static 'files/Astone-CV.pdf' %}" class="btn btn-success btn-lg mt-3" download>
+                Download CV
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

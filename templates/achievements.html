@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5 text-white">
+    <h2 class="text-center mb-4">My Achievements</h2>
+
+    <div class="list-group">
+        {% for achievement in achievement %}
+            <div class="list-group-item bg-dark text-white mb-3 rounded">
+                <h5>{{ achievement.title }}</h5>
+                {% if achievement.date %}
+                    <small class="text-muted">{{ achievement.date|date:"F j, Y" }}</small>
+                {% endif %}
+                <p class="mt-2">{{ achievement.description }}</p>
+            </div>
+        {% empty %}
+            <p class="text-center">No achievements added yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
